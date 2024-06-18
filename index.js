@@ -19,7 +19,7 @@ app.use("/api/data", serviceRoute);
 app.use("/api/admin", adminRoute);
 app.use(errorMiddleware);
 
-const PORT = 8000;
+const PORT = 8000 || process.env.PORT;
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`server is running at port: ${PORT}`);
